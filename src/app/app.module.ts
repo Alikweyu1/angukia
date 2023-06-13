@@ -35,6 +35,7 @@ import { CarouselConfig } from 'ngx-bootstrap/carousel';
 import { CarouselComponent } from './carousel/carousel.component';
 import { NextDirective } from './next.directive';
 import { PrevDirective } from './prev.directive';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -81,6 +82,7 @@ import { PrevDirective } from './prev.directive';
     MatDialogModule,
     BrowserAnimationsModule,
     CarouselModule.forRoot(),
+    HttpClientModule
    
   ],
   providers: [

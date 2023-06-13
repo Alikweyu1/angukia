@@ -2,38 +2,54 @@ import { Component, AfterViewInit, ViewChild, ChangeDetectorRef, NgModule } from
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
 import { CarouselConfig, CarouselModule } from 'ngx-bootstrap/carousel';
+import { trigger,transition,style,animate } from '@angular/animations';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
   providers: [
-    { provide: CarouselConfig, useValue: { interval: 8000, noPause: true, showIndicators: true } }
+    { provide: CarouselConfig, useValue: { interval: 3000, noPause: true, showIndicators: true } }
+  ],
+animations: [
+    trigger('slideAnimation', [
+      transition(':increment', [
+        style({ transform: 'translateX(-100%)' }),
+        animate('500ms', style({ transform: 'translateX(0)' }))
+      ]),
+      transition(':decrement', [
+        style({ transform: 'translateX(100%)' }),
+        animate('500ms', style({ transform: 'translateX(0)' }))
+      ])
+    ])
   ]
 })
 export class HeaderComponent implements AfterViewInit {
   sources: any = [];
   testmonials:any = [];
   isActiveSlide(slide: any): boolean {
-    // Implement your logic to determine if the slide is active
-    // You can compare the slide with a property or condition to determine its active state
-    // For example, if there is an 'active' property on the slide object, you can do:
     return slide.active === true;
   }
    slides = [
     {
-      image1: 'assets/images/image1.png',
+      image1: 'assets/images/tv1.png',
       image2: 'assets/images/image2.png',
-      image3: 'assets/images/test.png'
+      image3: 'assets/images/ps41.png',
+      image4: 'assets/images/camera1.png',
+      image5: 'assets/images/image4.png',
     },
     {
       image1: 'assets/images/image3.png',
-      image2: 'assets/images/image4.png',
-      image3: 'assets/images/image1.png'
+      image2: 'assets/images/image8.png',
+      image3: 'assets/images/image1.png',
+      image4: 'assets/images/tv1.png',
+      image5: 'assets/images/camera2.png',
     },
     {
       image1: 'assets/images/image7.png',
-      image2: 'assets/images/image6.png',
-      image3: 'assets/images/test1.png'
+      image2: 'assets/images/test.png',
+      image3: 'assets/images/camera2.png',
+      image4: 'assets/images/camera1.png',
+      image5: 'assets/images/image4.png',
     },
     // Add more slides as needed
   ];
