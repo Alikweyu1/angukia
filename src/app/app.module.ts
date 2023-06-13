@@ -36,6 +36,7 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { NextDirective } from './next.directive';
 import { PrevDirective } from './prev.directive';
 import { HttpClientModule } from '@angular/common/http';
+import { PageComponent } from './page/page.component';
 
 
 
@@ -49,6 +50,7 @@ import { HttpClientModule } from '@angular/common/http';
     CarouselComponent,
     NextDirective,
     PrevDirective,
+    PageComponent,
     
 
 

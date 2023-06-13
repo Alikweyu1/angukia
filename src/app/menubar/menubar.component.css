@@ -1,3 +1,23 @@
 .example-spacer {
     flex: 1 1 auto;
   }
+  .horizontal-menu {
+    display: inline-block;
+  }
+  
+  .horizontal-menu li {
+    display: inline;
+    margin-right: 10px; /* Optional: Adjust the spacing between menu items */
+  }
+  .horizontal-menu li:hover {
+    background-color: #f0f0f0; /* Change the background color on hover */
+    cursor: pointer;
+  }
+  
+  .horizontal-menu li:not(:last-child) {
+    margin-right: 20px; /* Adjust the spacing between menu items */
+  }
+  .horizontal-menu li.selected {
+    background-color: #1827cb; /* Set the background color for the selected menu item */
+    color: #293c99; /* Set the text color for the selected menu item */
+  }
