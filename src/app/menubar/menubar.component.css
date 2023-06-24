@@ -21,3 +21,107 @@
     background-color: #1827cb; /* Set the background color for the selected menu item */
     color: #293c99; /* Set the text color for the selected menu item */
   }
+  mat-sidenav-content{
+    margin-left: 9px;
+  }
+  .carousel-inner{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+  .post-card-thumbnail{
+    box-shadow: var(--gu-box-shadow);
+    transition: opacity var(--gu--transition-duration);
+    -webkit-transition: opacity var(--gu--transition-duration);
+    -moz-transition: opacity var(--gu--transition-duration);
+    -ms-transition: opacity var(--gu--transition-duration);
+    -o-transition: opacity var(--gu--transition-duration);
+    object-fit: cover;
+    height: 100%;
+}
+.heades{
+  font-size: 52px;
+  padding-bottom: 20px;
+}
+.zoom-image:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+@use "sass:color";
+#mars-gen-section .mars-gen-heading {
+    padding: 6px 10px;
+    padding-right:36px
+}
+
+#mars-gen-section .mars-gen-heading .mars-gen-latest {
+    border-radius:4px
+}
+
+#mars-gen-section .a-section-expander-container {
+    border: 1px solid #D5D9D9;
+    border-radius:8px
+}
+
+#mars-gen-section .a-expander-inner {
+    padding-left: 10px;
+    padding-right:10px
+}
+
+.mars-gen-latest .mars-gen-heading {
+    background-color:#067D62 !important
+}
+
+.mars-gen-newer-available .mars-gen-heading {
+    background-color:#6ED6E6 !important
+}
+
+.mars-gen-newer-available .mars-gen-heading:focus, .mars-gen-newer-available .mars-gen-heading:hover {
+    background-color:#61d2e4
+}
+
+.mars-gen-heading .mars-gen-heading-text-latest-model {
+    display: flex;
+    align-items: center;
+    color:#fff
+}
+
+.mars-gen-heading .mars-gen-heading-text-newer-available {
+    display: flex;
+    align-items: center;
+    color:#000
+}
+
+.mars-gen-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height:107px
+}
+
+.mars-gen-product {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width:100%
+}
+
+.mars-gen-product .mars-gen-details, .mars-gen-product .mars-gen-img-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex:1
+}
+
+.mars-gen-product .mars-gen-img-wrapper {
+    max-height: 85px;
+    max-width: 85px;
+    padding-right:4px
+}
+
+#newer-version {
+    display: none
+}

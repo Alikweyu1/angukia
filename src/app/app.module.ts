@@ -37,9 +37,12 @@ import { NextDirective } from './next.directive';
 import { PrevDirective } from './prev.directive';
 import { HttpClientModule } from '@angular/common/http';
 import { PageComponent } from './page/page.component';
-
-
-
+import { NgxImageZoomModule } from 'ngx-image-zoom';
+import { ExpiredSizePipe } from './expired-size.pipe';
+import { ExpiredColorPipe } from './expired-color.pipe';
+import { VgCoreModule } from 'ngx-videogular';
+import{VgControlsModule} from 'ngx-videogular'
+import { YouTubePlayerModule } from '@angular/youtube-player';
 @NgModule({
   
   declarations: [
@@ -51,6 +54,8 @@ import { PageComponent } from './page/page.component';
     NextDirective,
     PrevDirective,
     PageComponent,
+    ExpiredSizePipe,
+    ExpiredColorPipe,
     
 
 
@@ -58,7 +63,7 @@ import { PageComponent } from './page/page.component';
   imports: [
 
 
-    
+    YouTubePlayerModule,
   MaterialModule,
   BrowserModule,
     AppRoutingModule,
@@ -84,8 +89,10 @@ import { PageComponent } from './page/page.component';
     MatDialogModule,
     BrowserAnimationsModule,
     CarouselModule.forRoot(),
-    HttpClientModule
-   
+    HttpClientModule,
+    NgxImageZoomModule,
+    VgCoreModule,
+    VgControlsModule
   ],
   providers: [
     { provide: CarouselConfig, useValue: { interval:80000, noPause: true, showIndicators: true } }

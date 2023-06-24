@@ -3,6 +3,10 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
 import { CarouselConfig, CarouselModule } from 'ngx-bootstrap/carousel';
 import { trigger,transition,style,animate } from '@angular/animations';
+import { HttpClient } from '@angular/common/http';
+import { testmonies } from '../user/user.model';
+import { Observable } from 'rxjs';
+import { TestmonialsService } from '../service/testmonials.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -24,8 +28,9 @@ animations: [
   ]
 })
 export class HeaderComponent implements AfterViewInit {
+  testmonies: testmonies[] = [];
   sources: any = [];
-  testmonials:any = [];
+
   isActiveSlide(slide: any): boolean {
     return slide.active === true;
   }
@@ -56,14 +61,27 @@ export class HeaderComponent implements AfterViewInit {
  
   selectedTestmoniall: string="There are Testimonials from won packages";
   @ViewChild(MatSidenav) sideNav!: MatSidenav;
-  
-  constructor(private observer:BreakpointObserver,private cd:ChangeDetectorRef){
+  apiLoaded = false;
+
+  videoId = 'AvXdwV7IpOU';
+  constructor(private observer:BreakpointObserver,private cd:ChangeDetectorRef, private testmonialService:TestmonialsService ){
 
   }
   @NgModule({
     imports: [CarouselModule.forRoot(), /* other modules */],
-    // ...
+    
+
+// ...
   })
+  ngOnInit(){
+    if (!this.apiLoaded) {
+      const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      document.body.appendChild(tag);
+      this.apiLoaded = true;
+    }
+    this.loadingTesmonial()
+  }
   ngAfterViewInit(): void {
     this.sideNav.opened = true;
     this.observer.observe(['(max-width:800px)'])
@@ -78,5 +96,10 @@ export class HeaderComponent implements AfterViewInit {
     })
     this.cd.detectChanges();
   }
-  
+  loadingTesmonial(){
+    this.testmonialService.getMenuTitle().subscribe( data =>{
+      this.testmonies = data
+      console.log(testmonies)
+    })
+  }
 }

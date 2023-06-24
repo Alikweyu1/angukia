@@ -7,19 +7,31 @@
 </button>
 </mat-toolbar>
 <mat-sidenav-container>
-    <mat-sidenav #sideNav="matSidenav">
-        <img class="avatar mat-elavation-z8" src="https://cdn4.vectorstock.com/i/thumb-large/50/08/news-alerts-breaking-logo-tv-design-element-vector-24575008.jpg" alt="">
-        <h4 class="name">Testmonials</h4>
-        <mat-divider></mat-divider>
-        <ng-component *ngFor=" let source ">
+  <mat-sidenav #sideNav="matSidenav">
+    <img class="avatar mat-elevation-z8" src="https://cdn4.vectorstock.com/i/thumb-large/50/08/news-alerts-breaking-logo-tv-design-element-vector-24575008.jpg" alt="">
+    <h4 class="name">Testimonials</h4>
+    <mat-divider></mat-divider >
+    <div> <div></div></div>
+    <mat-card class="video-card" >
+      <mat-card-header>
+        <mat-card-title>Video Title</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <youtube-player [videoId]="videoId"
+                [height]="150" 
+                [width]="200"> 
 
-        </ng-component>
-        <mat-divider></mat-divider>
-        <button mat-button class="menu-button">
-            <mat-icon>settings</mat-icon>
-            <span>Settings</span>
-        </button>
-    </mat-sidenav>
+</youtube-player>
+      </mat-card-content>
+    </mat-card>
+    
+    <mat-divider></mat-divider>
+    <button mat-button class="menu-button">
+      <mat-icon>settings</mat-icon>
+      <span>Settings</span>
+    </button>
+  </mat-sidenav>
+  
     <mat-sidenav-content class="content mat-elevation-z4">
         <section class="product">
             <div class="container-fluid">

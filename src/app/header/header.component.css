@@ -108,3 +108,8 @@ mat-divider {
     flex: 1;
     margin: 10px;
   }
+  vg-player{
+    height: 50%;
+    width: 50%;
+  }
+  
